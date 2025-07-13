@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mittal Bhojanalya | Faridabad Sector 14</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins&display=swap" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+
+
+<!-- Feedback Button -->
+<button class="feedback-btn" onclick="openFeedback()">Feedback</button>
+
+
+<!-- Feedback Popup -->
+<div id="feedbackForm" class="feedback-popup">
+    <div class="feedback-content">
+        <span class="close-btn" onclick="closeFeedback()">&times;</span>
+        <h3>Send us your Feedback!</h3>
+        <input type="text" id="feedbackName" placeholder="Your Name" required>
+        <textarea id="feedbackMessage" placeholder="Your Message" required></textarea>
+        <button onclick="submitFeedback()">Submit</button>
+    </div>
+</div>
+<script src="{% static 'js/feedback.js' %}"></script>
+
+<body>
+
+<div class="navbar">
+    <div class="logo-section">
+        <img src="{% static 'images/logo.jpg' %}" alt="Mittal Bhojanalya" class="logo">
+        <h1 class="brand-name">Mittal Bhojanalya</h1>
+    </div>  
+    <div class="nav-links">
+        <a href="/">🏠 Home</a>
+        <a href="/menu/">🍽️ Menu</a>
+        <a href="/order/">Order Now</a>
+        <a href="/about/">ℹ️ About</a>
+        <a href="https://maps.app.goo.gl/8zdZy63BUL6zuph26" target="_blank">📍 Location</a>
+        <a href="/review/">⭐ Review</a>
+    </div>        
+</div>
+
+
+    <header>     
+        <h1>Mittal Bhojanalya</h1>
+        <p>Faridabad Sector 14 | Booth No. 132</p>   
+    </header>
+    
+    <div class="banner-wrapper">
+        <div class="banner-slider">
+            <img src="{% static 'images/banner.png' %}" alt="Banner 1">
+            <img src="{% static 'images/banner2.jpg' %}" alt="Banner 2">
+            <img src="{% static 'images/banner3.png' %}" alt="Banner 3">
+        </div>
+        <div class="slider-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    
+    <div class="offers">
+        <h2>Special Offer!</h2>
+        <p>Get 10% off on orders above ₹1000</p>
+        <p></p>
+        <button id="subscribeBtn" class="subscribe-btn">📧 Subscribe for Offers</button>
+    </div>
+
+    <div class="menu-highlights">
+        <h2>Our Top Dishes</h2>
+        <ul>
+            <li>Paneer Butter Masala With Stuff Naan</li>
+            <li>Dal Fry With Laccha Pratha</li>
+            <li>Shahi Paneer</li>
+            <li>Dal Makhani</li>
+            <li>Rajma Chawal</li>
+            <li>Noodles</li>
+        </ul>
+        <a href="/menu/" class="order-btn">View Menu</a>
+        <a href="/order/" class="order-btn">Order Now</a>
+    </div>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/919599090897?text=Hello%20Mittal%20Bhojanalya%2C%20I%20want%20to%20place%20an%20order!" 
+       class="whatsapp_float" target="_blank">
+        <img src="{% static 'images/whatsapp.png' %}" alt="Chat with us" width="60" />
+    </a>
+<div class="menu-container">
+    <h2>Must Try </h2>
+    {% for category, items in menu_items.items %}
+    <h3 class="menu-category">{{ category }}</h3>
+    <div class="menu-grid">
+        {% for item in items %}
+        <div class="menu-card">
+            <img src="{% static 'images/' %}{{ item.image }}" alt="{{ item.name }}" class="menu-item-image">
+            <h4>{{ item.name }}</h4>
+            <p class="price">{{ item.price }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</div>    
+<footer class="site-footer">
+    <div class="footer-content">
+        <p><strong>Mittal Bhojanalya</strong> | Booth No. 132, Sector 14 Market, Faridabad</p>
+        <p>📞 9268599565 | 7291081303</p>
+        <p>📧 mittalbhojanalya@gmail.com</p>
+        <div class="social-icons">
+            <a href="https://wa.me/91959909897" target="_blank"><img src="{% static 'images/whatsapp.png' %}" alt="WhatsApp"></a>
+            <a href="#" target="_blank"><img src="{% static 'images/facebook.png' %}" alt="Facebook"></a>
+            <a href="https://instagram.com/mittal_bhojanalya" target="_blank"><img src="{% static 'images/instagram.png' %}" alt="Instagram"></a>
+        </div>
+        <p class="disclaimer">*Images are for illustration. Actual dishes may vary.</p>
+        <p class="copyright">© 2025 Mittal Bhojanalya. All rights reserved.</p>
+    </div>
+</footer>
+<!--subscribeForm-->
+<div id="subscribeModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Stay Updated!</h2>
+    <form id="subscribeForm">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Subscribe</button>
+    </form>
+    <div id="subscribe-message" style="margin-top:10px;"></div>
+  </div>
+</div>
+
+
+  <script src="{% static 'js/feedback.js' %}"></script>
+</div>
+</body>
+<!-- Special Offer Popup -->
+<div id="discountPopup" class="discount-popup">
+    <p>🔥 Get 10% off on orders above ₹1000!</p>
+    <span class="close-btn" onclick="closeDiscount()">×</span>
+</div>
+</html>
+

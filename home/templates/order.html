@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Now | Mittal Bhojanalya</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header>
+    <h1>Order Now</h1>
+    <p>Faridabad Sector 14 | Booth No. 132</p>
+</header>
+
+<div class="order-form-container">
+    {% if message %}
+        <p class="success">{{ message }}</p>
+        <a href="/" class="order-btn">Back to Home</a>
+    {% else %}
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="text" name="phone" placeholder="Phone Number" required>
+        <textarea name="order_details" placeholder="Your Order Details" required></textarea>
+        <button type="submit">Place Order</button>
+    </form>
+    {% endif %}
+</div>
+
+</body>
+
+    <a href="/" class="order-btn">Home</a>
+    <a href="#" onclick="openFeedback()" class="order-btn">Feedback</a>
+
+<a href="/" class="order-btn">Go Back</a>
+</html>

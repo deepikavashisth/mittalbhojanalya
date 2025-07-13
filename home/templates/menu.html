@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mittal Bhojanalya Menu</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header>
+    <h1>Mittal Bhojanalya</h1>
+    <p>Faridabad Sector 14 | Booth No. 132</p>
+</header>
+
+<div class="menu-container">
+    <h2>Our Menu</h2>
+
+    {% for category, items in menu_items.items %}
+    <h3 class="menu-category">{{ category }}</h3>
+    <div class="menu-grid">
+        {% for item in items %}
+        <div class="menu-card">
+            <img src="{% static 'images/' %}{{ item.image }}" alt="{{ item.name }}" class="menu-item-image">
+            <h4>{{ item.name }}</h4>
+            <p class="price">{{ item.price }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+
+</div>
+
+<a href="/" class="order-btn">Go Back</a>
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <p><strong>Mittal Bhojanalya</strong> | Booth No. 132, Sector 14 Market, Faridabad</p>
+        <p>📞 9268599565 | 7291081303</p>
+        <p>📧 mittalbhojanalya@gmail.com</p>
+        <div class="social-icons">
+            <a href="https://wa.me/91959909897" target="_blank"><img src="{% static 'images/whatsapp.png' %}" alt="WhatsApp"></a>
+            <a href="#" target="_blank"><img src="{% static 'images/facebook.png' %}" alt="Facebook"></a>
+            <a href="https://instagram.com/mittal_bhojanalya" target="_blank"><img src="{% static 'images/instagram.png' %}" alt="Instagram"></a>
+        </div>
+        <p class="copyright">© 2025 Mittal Bhojanalya. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

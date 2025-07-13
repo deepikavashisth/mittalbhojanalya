@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mittal Bhojanalya</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+    <h1>Mittal Bhojanalya</h1>
+    <p>Faridabad Sector 14 | Booth No. 132</p>
+</header>
+    <section class="testimonial-section">
+    <h2>Our Clients Say!!!</h2>
+
+    <div class="testimonial-card">
+        <p class="quote">“Super easy ordering process and fast delivery! The food arrived hot and fresh, just as if I were dining in.”</p>
+        <h4>Sidharth</h4>
+        <span class="role">Online Customer</span>
+    </div>
+
+    <div class="testimonial-card">
+        <p class="quote">“Their catering service made my event truly special. The customized menu and presentation were outstanding—our guests loved it!”</p>
+        <h4>Rashmi Malik</h4>
+        <span class="role">Event Host</span>
+    </div>
+
+    <div class="testimonial-card">
+        <p class="quote">“Mittal Bhojanalya serves the most authentic North Indian flavors! Every dish is rich, flavorful, and feels like home-cooked perfection.”</p>
+        <h4>Food Lover</h4>
+        <span class="role">IT Profession</span>
+    </div>
+    </section>
+</body>
+<a href="/" class="order-btn">Home</a>
+<a href="#" onclick="openFeedback()" class="order-btn">Feedback</a>
+<a href="/" class="order-btn">Go Back</a>
+<footer class="site-footer">
+    <div class="footer-content">
+        <p><strong>Mittal Bhojanalya</strong> | Booth No. 132, Sector 14 Market, Faridabad</p>
+        <p>📞 9268599565 | 7291081303</p>
+        <p>📧 mittalbhojanalya@gmail.com</p>
+        <div class="social-icons">
+            <a href="https://wa.me/91959909897" target="_blank"><img src="{% static 'images/whatsapp.png' %}" alt="WhatsApp"></a>
+            <a href="#" target="_blank"><img src="{% static 'images/facebook.png' %}" alt="Facebook"></a>
+            <a href="https://instagram.com/mittal_bhojanalya" target="_blank"><img src="{% static 'images/instagram.png' %}" alt="Instagram"></a>
+        </div>
+        <p class="copyright">© 2025 Mittal Bhojanalya. All rights reserved.</p>
+    </div>
+</footer>
+</html>
